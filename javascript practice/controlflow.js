@@ -44,3 +44,4 @@ let v=100;
 v>100 ? console.log(v) : console.log(200)
 
 console.log("hello world")
+console.log(2)
