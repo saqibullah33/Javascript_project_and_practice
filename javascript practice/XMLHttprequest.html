@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML HTTP request</title>
+    <style>
+        .img {
+            display: flex;
+            border-radius: 50%;
+            width: 100px;
+            margin: auto;
+          }
+          
+    </style>
+</head>
+<body>
+    <h1>XML HTTP REQUEST</h1>
+    <h1 class="follower"></h1>
+    <img src="" alt="" class="img">
+
+    <script>
+
+        let h1=document.querySelector(".follower")
+        let url = 'https://api.github.com/users/saqibregi';
+      
+var followers;
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        
+        xhr.onreadystatechange = function() {
+            console.log(xhr.readyState)
+          if (xhr.readyState === 4) {
+            
+            if (xhr.status === 200) {
+              let data = JSON.parse(this.responseText);
+             followers=data.followers;
+              console.log('done');
+              console.log(followers)
+              h1.innerHTML=`followers is ${followers}`
+
+              let imgsrc=data.avatar_url;
+              const image = document.querySelector('.img');
+image.setAttribute('src', imgsrc);
+
+              console.log(imgsrc)
+            } else {
+              console.log('Error');
+            }
+          }
+        };
+        console.log("folllowr -> " +followers)
+        
+        xhr.send();
+
+       
+        
+
+    </script>
+</body>
+</html>

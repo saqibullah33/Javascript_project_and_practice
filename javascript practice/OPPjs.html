@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPP</title>
+</head>
+
+<body>
+
+
+    <script>
+        let Usser = {
+         //   Name: "Saqib",
+            age: 12,
+            getuser: function () {
+                // console.log(this)
+                //  console.log(`username-> ${this.Name}`)
+                //  console.log(this)
+
+            }
+        }
+
+        function usser(name, age, city) {
+            this.name = name;
+            this.age = age;
+            this.city = city;
+            this.greeting = function () {
+             //   console.log("greeting " + this.name)
+
+            }
+            //return this
+        }
+
+       // const u1=new user("Saqib",12,"peshawar")
+      //  console.log(u1.greeting())
+       // const u2= new user("ahmad",12,"isb")
+     //   console.log(u1)
+     function User(username, loginCount, isLoggedIn){
+        this.username = username;
+        this.loginCount = loginCount;
+        this.isLoggedIn = isLoggedIn
+    
+        this.greeting = function(){
+          //  console.log(`Welcome ${this.username}`);
+    
+        }
+    
+       
+    }
+    
+    const n=new User("saqib",2,true)
+  
+
+    function user(name,age){
+        this.name=name;
+        this.age=age;
+    }
+user.prototype.increment=function(){
+    this.age++;
+}
+user.prototype.disp=function(){
+    console.log(`username is - > ${this.name} and age is ${this.age}`)
+}
+
+const u=new user("saqib",12)
+u.increment()
+console.log(u.age)
+
+
+
+    </script>
+</body>
+
+</html>

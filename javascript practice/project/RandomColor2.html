@@ -1,0 +1,89 @@
+<html>
+<head>
+<style>
+
+    .start-button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30%;
+        font-size: 20px;
+        font-weight: bold;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 2px;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.child {
+ 
+  height: 200px;
+  width: 250px;
+  border-radius: 12px;
+}
+
+.hex-code {
+    color: #f6f1f1;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .random-color-generator {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+</style>
+</head>
+<body>
+<div class="parent">
+    <h1>Random Color genertor</h1>
+  <div class="child"></div>
+  <div><h3 class="hex-code"></h3></div>
+  <button class="start-button">Generate</button>
+</div>
+</div>
+
+<script>
+    let generateBtn=document.querySelector(".start-button");
+   let childDiv= document.querySelector(".child");
+   
+
+    function randColor() {
+        let color = "";
+        for (let i = 0; i < 6; i++) {
+          color += Math.floor(Math.random() * 16).toString(16);
+        }
+        return "#" + color;
+      }
+
+      let changeColor=()=>
+      {
+        childDiv.style.backgroundColor=randColor();
+        let Hexcode=randColor();
+        let toDisplatHexCode=document.querySelector(".hex-code")
+        toDisplatHexCode.style.backgroundColor="black"
+        toDisplatHexCode.innerHTML= "Hex Value is " + Hexcode;
+        
+      }
+
+      generateBtn.addEventListener('click',changeColor)
+      
+</script>
+</body>
+</html>

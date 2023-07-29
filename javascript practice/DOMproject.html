@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOm project</title>
+    <style>
+        li{
+            
+            background-color: rgb(238, 154, 0);
+            padding: 7px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            
+        }
+       
+    </style>
+</head>
+<body>
+
+    <form class="form">
+
+       <label for="">Name</label> <input type="text" class="inp">
+        <button class="btn" type="submit">Submit</button>
+    </form>
+    <ul class="ul">
+
+        <li class="li">java</li>
+    </ul>
+    
+    <script>
+        let name="";
+        
+
+        document.querySelector('.form').addEventListener('submit',(e)=>
+        {
+            e.preventDefault();
+           
+        
+        }
+        )
+        document.querySelector('.inp').addEventListener('change',(e)=>{
+            name=(e.target.value)
+            console.log(name)
+        })
+
+        function CreateLi(name){
+            let parent=document.querySelector('.ul');
+            const li=document.createElement('li');
+            li.appendChild(document.createTextNode(name))
+            parent.appendChild(li)
+        }
+
+
+document.querySelector('.btn').addEventListener('click',()=>{
+    CreateLi(name);
+})
+
+
+       
+
+        
+        
+    </script>
+</body>
+</html>
